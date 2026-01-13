@@ -1,0 +1,228 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold text-center mb-8">Candidate Listing</h1>
+
+  <!-- User Table -->
+  <div class="overflow-x-auto bg-white rounded-lg shadow">
+    <table class="w-full table-auto">
+      <thead>
+        <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+          <th class="min-w-50 py-3 px-6 text-left">ID</th>
+          <th class="min-w-50 py-3 px-6 text-left">Date</th>
+          <th class="min-w-50 py-3 px-6 text-left">Name</th>
+          <th class="min-w-50 py-3 px-6 text-left">Email</th>
+          <th class="min-w-50 py-3 px-6 text-left">Contact</th>
+          <th class="min-w-50 py-3 px-6 text-left">Bank Details</th>
+          <th class="min-w-50 py-3 px-6 text-left">Job Title</th>
+          <th class="min-w-50 py-3 px-6 text-left">Department</th>
+          <th class="min-w-50 py-3 px-6 text-left">Adhar</th>
+          <th class="min-w-50 py-3 px-6 text-left">Pan</th>
+          <th class="min-w-50 py-3 px-6 text-left">High School</th>
+          <th class="min-w-50 py-3 px-6 text-left">Senior School</th>
+          <th class="min-w-50 py-3 px-6 text-left">Graduation</th>
+          <th class="min-w-50 py-3 px-6 text-left">Post Graduation</th>
+          <th class="min-w-50 py-3 px-6 text-left">Experience Letter</th>
+          <th class="min-w-50 py-3 px-6 text-left">Relieving Letter</th>
+          <th class="min-w-50 py-3 px-6 text-left">Salary Slip</th>
+          <th class="min-w-50 py-3 px-6 text-left">Bank Certificate</th>
+          <th class="min-w-50 py-3 px-6 text-left">Feedback</th>
+          <th class="min-w-50 py-3 px-6 text-left">Action</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-600 text-sm">
+        <% allCandidates.map((item, index)=>{ %>
+
+        <tr class="border-b border-gray-200 hover:bg-gray-100">
+          <td class="py-3 px-6 text-left"><%= index + 1 + currRow %></td>
+          <td class="py-3 px-6 text-left">
+            <% const date = new Date(item.createdAt); %> <%= date.toDateString()
+            %>
+          </td>
+          <td class="py-3 px-6 text-left"><%= item.name %></td>
+          <td class="py-3 px-6 text-left"><%= item.email %></td>
+          <td class="py-3 px-6 text-left"><%= item.contact %></td>
+          <td class="py-3 px-6 text-left"><%= item.bankDetails %></td>
+          <td class="py-3 px-6 text-left"><%= item.jobTitle %></td>
+          <td class="py-3 px-6 text-left"><%= item.department %></td>
+          <td class="py-3 px-6 text-left">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="<%= item.adhar %>"
+              class="text-blue-500 hover:underline"
+              >adhar</a
+            >
+          </td>
+          <td class="py-3 px-6 text-left">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="<%= item.pan %>"
+              class="text-blue-500 hover:underline"
+              >pan</a
+            >
+          </td>
+          <td class="py-3 px-6 text-left">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="<%= item.highSchool %>"
+              class="text-blue-500 hover:underline"
+              >high school</a
+            >
+          </td>
+          <td class="py-3 px-6 text-left">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="<%= item.seniorSchool %>"
+              class="text-blue-500 hover:underline"
+              >senior school</a
+            >
+          </td>
+          <td class="py-3 px-6 text-left">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="<%= item.graduation %>"
+              class="text-blue-500 hover:underline"
+              >graduation</a
+            >
+          </td>
+          <td class="py-3 px-6 text-left">
+            <% if(item.postGrad){ %>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="<%= item.postGrad %>"
+              class="text-blue-500 hover:underline"
+              >post graduation</a
+            >
+            <% }else { %>
+            <i class="fa-solid fa-file-circle-xmark text-lg"></i>
+            <% }%>
+          </td>
+          <td class="py-3 px-6 text-left">
+            <% if(item.expLetter){ %>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="<%= item.expLetter %>"
+              class="text-blue-500 hover:underline"
+              >experience letter</a
+            >
+            <% }else { %>
+            <i class="fa-solid fa-file-circle-xmark text-lg"></i>
+            <% }%>
+          </td>
+          <td class="py-3 px-6 text-left">
+            <% if(item.relieveLetter){ %>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="<%= item.relieveLetter %>"
+              class="text-blue-500 hover:underline"
+              >relieving letter</a
+            >
+            <% }else { %>
+            <i class="fa-solid fa-file-circle-xmark text-lg"></i>
+            <% }%>
+          </td>
+          <td class="py-3 px-6 text-left">
+            <% if(item.relieveLetter){ %>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="<%= item.salarySlip %>"
+              class="text-blue-500 hover:underline"
+              >salary slip</a
+            >
+            <% }else { %>
+            <i class="fa-solid fa-file-circle-xmark text-lg"></i>
+            <% }%>
+          </td>
+          <td class="py-3 px-6 text-left">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="<%= item.bankCert %>"
+              class="text-blue-500 hover:underline"
+              >bank certificate</a
+            >
+          </td>
+          <td class="py-3 px-6 text-left"><%= item.feedback %></td>
+          <td class="py-3 px-6 text-left">
+            <form
+              method="POST"
+              action="/candidates/<%= item._id%>?_method=DELETE"
+            >
+              <div class="flex item-center justify-start">
+                <button
+                  class="flex items-center gap-1 cursor-pointer justify-center mr-2 transform hover:text-red-500 hover:scale-110"
+                >
+                  <i class="fa-regular fa-trash-can"></i>
+                  <span>Delete</span>
+                </button>
+              </div>
+            </form>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Static Pagination -->
+  <div class="flex justify-between items-center">
+    <div>
+      <% if(totalCandidates < currRow + 10) { %>
+      <p class="text-sm text-gray-800">
+        Showing <%= currRow + 1 %>-<%= totalCandidates%> of <%=
+        totalCandidates%>
+      </p>
+      <% } else{%>
+      <p class="text-sm text-gray-800">
+        Showing <%= currRow + 1 %>-<%= currRow + 10 %> of <%= totalCandidates%>
+      </p>
+      <% } %>
+    </div>
+    <div class="flex space-x-2 mt-5">
+      <!-- Previous -->
+      <% if (page > 1) { %>
+      <a href="?page=<%= page - 1 %>">
+        <button
+          class="px-3 py-1 rounded-md bg-gray-200 text-gray-700 cursor-pointer"
+        >
+          Previous
+        </button>
+      </a>
+      <% } else { %>
+      <button
+        class="px-3 py-1 rounded-md bg-gray-200 text-gray-400 opacity-50 cursor-not-allowed"
+        disabled
+      >
+        Previous
+      </button>
+      <% } %>
+
+      <!-- Next -->
+      <% if (page < totalPages) { %>
+      <a href="?page=<%= page + 1 %>">
+        <button
+          class="px-3 py-1 rounded-md bg-gray-200 text-gray-700 cursor-pointer"
+        >
+          Next
+        </button>
+      </a>
+      <% } else { %>
+      <button
+        class="px-3 py-1 rounded-md bg-gray-200 text-gray-400 opacity-50 cursor-not-allowed"
+        disabled
+      >
+        Next
+      </button>
+      <% } %>
+    </div>
+  </div>
+</div>

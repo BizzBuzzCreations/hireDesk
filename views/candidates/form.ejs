@@ -1,0 +1,364 @@
+<% layout("/layouts/boilerplate") %>
+
+<form
+  action="/candidates"
+  method="POST"
+  enctype="multipart/form-data"
+  class="flex flex-col justify-center items-center py-20 border-gray-600 border rounded-lg my-20 mx-40 shadow-lg shadow-gray-400"
+>
+  <h2 class="text-3xl mb-10 font-semibold">Enter all information</h2>
+
+  <div class="bg-white p-4 rounded-lg">
+    <div class="relative bg-white mx-auto">
+      <input
+        type="text"
+        id="username"
+        name="name"
+        class="peer bg-transparent h-10 md:w-150 w-72 rounded-lg text-gray-800 placeholder-transparent ring-2 px-2 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+        placeholder="Type inside me"
+        required
+      /><label
+        for="username"
+        class="absolute cursor-text left-2 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-sky-600 peer-focus:text-sm transition-all"
+        >Enter your name</label
+      >
+    </div>
+  </div>
+
+  <div class="bg-white p-4 rounded-lg">
+    <div class="relative bg-white mx-auto">
+      <input
+        type="text"
+        id="email"
+        name="email"
+        class="peer bg-transparent h-10 md:w-150 w-72 rounded-lg text-gray-800 placeholder-transparent ring-2 px-2 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+        placeholder="Type inside me"
+        required
+      /><label
+        for="email"
+        class="absolute cursor-text left-2 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-sky-600 peer-focus:text-sm transition-all"
+        >Enter your Email</label
+      >
+    </div>
+  </div>
+
+  <div class="bg-white p-4 rounded-lg">
+    <div class="relative bg-white mx-auto">
+      <input
+        type="number"
+        id="contact"
+        name="contact"
+        class="peer bg-transparent h-10 md:w-150 w-72 rounded-lg text-gray-800 placeholder-transparent ring-2 px-2 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+        placeholder="Type inside me"
+        required
+      /><label
+        for="contact"
+        class="absolute cursor-text left-2 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-sky-600 peer-focus:text-sm transition-all"
+        >Enter your Contact</label
+      >
+    </div>
+  </div>
+
+  <div class="bg-white p-4 rounded-lg mb-4">
+    <div class="relative bg-white mx-auto">
+      <input
+        type="text"
+        id="bank"
+        name="bankDetails"
+        class="peer bg-transparent mb-2 h-10 md:w-150 w-72 rounded-lg text-gray-800 placeholder-transparent ring-2 px-2 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+        placeholder="Type inside me"
+        required
+      /><label
+        for="bank"
+        class="absolute cursor-text left-2 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-sky-600 peer-focus:text-sm transition-all"
+        >Enter your banking details</label
+      >
+    </div>
+    <div class="flex md:w-150 w-72 items-center gap-2">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      <span class="text-sm"
+        >Please share your banking details for payroll purposes, including Bank
+        Name, Account Holder Name, Account Number, Account Type
+        (Savings/Current), IFSC Code, and Branch Name.
+      </span>
+    </div>
+  </div>
+
+  <div
+    class="p-4 w-full mb-8 mx-auto md:w-150 w-72 rounded-lg text-gray-800 ring-2 px-4 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+  >
+    <h4 class="text-xl lg:text-2xl font-semibold">Job Title</h4>
+
+    <div>
+      <label
+        class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3 hover:bg-gray-300 cursor-pointer"
+      >
+        <input
+          type="radio"
+          name="jobTitle"
+          value="Customer Care Executive(uk sales)"
+        />
+        <i class="pl-2">Customer Care Executive(uk sales)</i>
+      </label>
+
+      <label
+        class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3 hover:bg-gray-300 cursor-pointer"
+      >
+        <input type="radio" name="jobTitle" value="Graphic Designer" />
+        <i class="pl-2">Graphic Designer</i>
+      </label>
+
+      <label
+        class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3 hover:bg-gray-300 cursor-pointer"
+      >
+        <input type="radio" name="jobTitle" value="It & Dialer admin" />
+        <i class="pl-2">It & Dialer admin</i>
+      </label>
+
+      <label
+        class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3 hover:bg-gray-300 cursor-pointer"
+      >
+        <input type="radio" name="jobTitle" value="Hr admin" />
+        <i class="pl-2">Hr admin</i>
+      </label>
+      <label
+        class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3 hover:bg-gray-300 cursor-pointer"
+      >
+        <input type="radio" name="jobTitle" value="Performance marketer" />
+        <i class="pl-2">Performance marketer</i>
+      </label>
+    </div>
+  </div>
+
+  <div
+    class="p-4 w-full mb-4 mx-auto md:w-150 w-72 rounded-lg text-gray-800 ring-2 px-4 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+  >
+    <h4 class="text-xl lg:text-2xl font-semibold">Department</h4>
+
+    <div>
+      <label
+        class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3 hover:bg-gray-300 cursor-pointer"
+      >
+        <input type="radio" name="department" value="Uk Process" />
+        <i class="pl-2">Uk Process</i>
+      </label>
+
+      <label
+        class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3 hover:bg-gray-300 cursor-pointer"
+      >
+        <input type="radio" name="department" value="Research & Development" />
+        <i class="pl-2">Research & Development</i>
+      </label>
+
+      <label
+        class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3 hover:bg-gray-300 cursor-pointer"
+      >
+        <input type="radio" name="department" value="HR" />
+        <i class="pl-2">HR</i>
+      </label>
+
+      <label
+        class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3 hover:bg-gray-300 cursor-pointer"
+      >
+        <input type="radio" name="department" value="IT" />
+        <i class="pl-2">IT</i>
+      </label>
+      <label
+        class="flex bg-gray-100 text-gray-700 rounded-md px-3 py-2 my-3 hover:bg-gray-300 cursor-pointer"
+      >
+        <input type="radio" name="department" value="Uk Broadband process" />
+        <i class="pl-2">Uk Broadband process</i>
+      </label>
+    </div>
+  </div>
+
+  <div
+    class="rounded-lg py-3 mb-5 mx-auto md:w-150 w-72 ring-2 px-4 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+  >
+    <label
+      for="adhar"
+      class="max-w-sm mb-2 block text-sm font-medium text-gray-700"
+      >Adhar Card</label
+    >
+    <input
+      id="adhar"
+      name="adhar"
+      type="file"
+      class="mt-2 block w-full max-w-sm text-sm file:mr-4 file:rounded-md file:border-0 file:bg-gray-600 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-800 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
+      required
+    />
+  </div>
+
+  <div
+    class="rounded-lg py-3 mb-5 mx-auto md:w-150 w-72 ring-2 px-4 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+  >
+    <label
+      for="pan"
+      class="max-w-sm mb-2 block text-sm font-medium text-gray-700"
+      >Pan Card</label
+    >
+    <input
+      id="pan"
+      name="pan"
+      type="file"
+      class="mt-2 block w-full max-w-sm text-sm file:mr-4 file:rounded-md file:border-0 file:bg-gray-600 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-800 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
+      required
+    />
+  </div>
+
+  <div
+    class="rounded-lg py-3 mb-5 mx-auto md:w-150 w-72 ring-2 px-4 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+  >
+    <label
+      for="highSchool"
+      class="max-w-sm mb-2 block text-sm font-medium text-gray-700"
+      >Higher secondary Certificate</label
+    >
+    <input
+      id="highSchool"
+      name="highSchool"
+      type="file"
+      class="mt-2 block w-full max-w-sm text-sm file:mr-4 file:rounded-md file:border-0 file:bg-gray-600 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-800 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
+      required
+    />
+  </div>
+
+  <div
+    class="rounded-lg py-3 mb-5 mx-auto md:w-150 w-72 ring-2 px-4 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+  >
+    <label
+      for="seniorSchool"
+      class="max-w-sm mb-2 block text-sm font-medium text-gray-700"
+      >Senior secondary Certificate</label
+    >
+    <input
+      id="seniorSchool"
+      name="seniorSchool"
+      type="file"
+      class="mt-2 block w-full max-w-sm text-sm file:mr-4 file:rounded-md file:border-0 file:bg-gray-600 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-800 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
+      required
+    />
+  </div>
+
+  <div
+    class="rounded-lg py-3 mb-5 mx-auto md:w-150 w-72 ring-2 px-4 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+  >
+    <label
+      for="graduation"
+      class="max-w-sm mb-2 block text-sm font-medium text-gray-700"
+      >Graduation Certificate</label
+    >
+    <input
+      id="graduation"
+      name="graduation"
+      type="file"
+      class="mt-2 block w-full max-w-sm text-sm file:mr-4 file:rounded-md file:border-0 file:bg-gray-600 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-800 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
+      required
+    />
+  </div>
+
+  <div
+    class="rounded-lg py-3 mb-5 mx-auto md:w-150 w-72 ring-2 px-4 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+  >
+    <label
+      for="postGrad"
+      class="max-w-sm mb-2 block text-sm font-medium text-gray-700"
+      >Post Graduation Certificate</label
+    >
+    <input
+      id="postGrad"
+      name="postGrad"
+      type="file"
+      class="mt-2 block w-full max-w-sm text-sm file:mr-4 file:rounded-md file:border-0 file:bg-gray-600 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-800 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
+    />
+  </div>
+
+  <div
+    class="rounded-lg py-3 mb-5 mx-auto md:w-150 w-72 ring-2 px-4 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+  >
+    <label
+      for="expLetter"
+      class="max-w-sm mb-2 block text-sm font-medium text-gray-700"
+      >Experience letter</label
+    >
+    <input
+      id="expLetter"
+      name="expLetter"
+      type="file"
+      class="mt-2 block w-full max-w-sm text-sm file:mr-4 file:rounded-md file:border-0 file:bg-gray-600 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-800 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
+    />
+  </div>
+
+  <div
+    class="rounded-lg py-3 mb-5 mx-auto md:w-150 w-72 ring-2 px-4 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+  >
+    <label
+      for="relieveLetter"
+      class="max-w-sm mb-2 block text-sm font-medium text-gray-700"
+      >Relieving letter</label
+    >
+    <input
+      id="relieveLetter"
+      name="relieveLetter"
+      type="file"
+      class="mt-2 block w-full max-w-sm text-sm file:mr-4 file:rounded-md file:border-0 file:bg-gray-600 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-800 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
+    />
+  </div>
+
+  <div
+    class="rounded-lg py-3 mb-5 mx-auto md:w-150 w-72 ring-2 px-4 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+  >
+    <label
+      for="salarySlip"
+      class="max-w-sm mb-2 block text-sm font-medium text-gray-700"
+      >Last 3 month salary slip</label
+    >
+    <input
+      id="salarySlip"
+      name="salarySlip"
+      type="file"
+      class="mt-2 block w-full max-w-sm text-sm file:mr-4 file:rounded-md file:border-0 file:bg-gray-600 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-800 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
+    />
+  </div>
+
+  <div
+    class="rounded-lg py-3 mb-2 mx-auto md:w-150 w-72 ring-2 px-4 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+  >
+    <label
+      for="bankCert"
+      class="max-w-sm mb-2 block text-sm font-medium text-gray-700"
+      >Bank certificate</label
+    >
+    <input
+      id="bankCert"
+      name="bankCert"
+      type="file"
+      class="mt-2 block w-full max-w-sm text-sm file:mr-4 file:rounded-md file:border-0 file:bg-gray-600 file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-800 focus:outline-none disabled:pointer-events-none disabled:opacity-60"
+      required
+    />
+  </div>
+
+  <div class="bg-white p-4 rounded-lg mb-10">
+    <div class="relative bg-white mx-auto">
+      <textarea
+        type="text"
+        id="feedback"
+        name="feedback"
+        class="peer bg-transparent py-2 h-20 md:w-150 w-72 rounded-lg text-gray-800 placeholder-transparent ring-2 px-2 ring-gray-500 focus:ring-sky-600 focus:outline-none focus:border-rose-600"
+        placeholder="Type inside me"
+      ></textarea
+      ><label
+        for="feedback"
+        class="absolute cursor-text left-2 -top-3 text-sm text-gray-500 bg-inherit mx-1 px-1 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-placeholder-shown:top-2 peer-focus:-top-3 peer-focus:text-sky-600 peer-focus:text-sm transition-all"
+        >Enter your Feedback</label
+      >
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="bg-black text-white text-xl py-2 px-4 rounded-lg md:w-150 w-72 cursor-pointer hover:scale-95 transition-all duration-300"
+  >
+    Submit
+  </button>
+</form>

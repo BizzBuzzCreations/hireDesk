@@ -21,7 +21,7 @@ main()
   });
 
 async function main() {
-  await mongoose.connect("mongodb://localhost:27017/candidates");
+  await mongoose.connect(process.env.MONGO_URI);
 }
 
 app.set("view engine", "ejs");

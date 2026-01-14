@@ -44,6 +44,9 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
+  if (req.cookies.dashboardAuth === "true") {
+    return res.redirect("/candidates");
+  }
   res.render("candidates/login");
 });
 

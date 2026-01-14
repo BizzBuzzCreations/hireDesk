@@ -1,5 +1,6 @@
 const Candidate = require("../models/candidate");
 const ExpressError = require("../utils/expressError");
+const cloudinary = require("cloudinary").v2;
 
 module.exports.index = async (req, res) => {
   try {
@@ -106,8 +107,46 @@ module.exports.createCandidate = async (req, res) => {
 };
 
 module.exports.destroyCandidate = async (req, res) => {
+  const DOC_FIELDS = [
+    "adhar",
+    "pan",
+    "highSchool",
+    "seniorSchool",
+    "graduation",
+    "postGrad",
+    "expLetter",
+    "relieveLetter",
+    "salarySlip",
+    "bankCert",
+  ];
+  function extractPublicId(url) {
+    return url
+      .split("/upload/")[1]
+      .replace(/^v\d+\//, "")
+      .replace(/\.\w+$/, "");
+  }
+
   try {
     const { id } = req.params;
+    const data = await Candidate.findById(id);
+    if (!data) {
+      res.cookie("toast", "Candidate not found!", {
+        httpOnly: true,
+        maxAge: 4000, // 4 seconds
+      });
+      return res.redirect("/candidates");
+    }
+
+    let publicIds = [];
+    for (const field of DOC_FIELDS) {
+      if (data[field]) {
+        publicIds.push(extractPublicId(data[field]));
+      }
+    }
+
+    //delete from cloudinary
+    cloudinary.api.delete_resources(publicIds);
+
     const candidate = await Candidate.findByIdAndDelete(id);
     if (!candidate) {
       res.cookie("toast", "Candidate not found!", {
